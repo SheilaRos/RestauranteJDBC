@@ -29,5 +29,10 @@ public class Cocinero {
     public void setExperiencia(int experiencia) {this.experiencia = experiencia;}
     public String getEspecialidad() {return especialidad;}
     public void setEspecialidad(String especialidad) {this.especialidad = especialidad; }
+
+    @Override
+    public String toString() {
+        return "Cocinero{" + "nombre=" + nombre + ", telefono=" + telefono + ", sexo=" + sexo + ", edad=" + edad + ", experiencia=" + experiencia + ", especialidad=" + especialidad + '}'+"\n";
+    }
   
 }

@@ -22,6 +22,9 @@ public class Plato {
     public void setPrecio(double precio) {    this.precio = precio;}
     public Cocinero getCocinero() {   return cocinero; }
     public void setCocinero(Cocinero cocinero) {   this.cocinero = cocinero;  }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Plato{" + "nombre=" + nombre + ", tipo=" + tipo + ", precio=" + precio + ", cocinero=" + this.getCocinero() + '}';
+    }
 }
