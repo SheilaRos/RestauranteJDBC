@@ -25,6 +25,7 @@ public class RestauranteJDBC {
         ps.execute();
         ps.close();
     }
+    //Devolver lista de platos
     public List<Plato> devolverPlatos() throws SQLException{
         List<Plato> platos = new ArrayList<>();
         String query = "select * from plato;";
@@ -35,7 +36,7 @@ public class RestauranteJDBC {
             p.setNombre(rs.getString("nombre"));
             p.setPrecio(rs.getDouble("precio"));
             p.setTipo(rs.getString("tipo"));
-            p.setCocinero(devolverCocinero(rs.getString("cocinero")));
+            p.setCocinero(devolverCocinero(rs.getString("cocinero"))); //utilizo la función devolver cocinero
             platos.add(p);
         }
         rs.close();
@@ -45,7 +46,7 @@ public class RestauranteJDBC {
     //Devolver un cocinero concreto
     public Cocinero devolverCocinero(String nombre) throws SQLException{
         Cocinero c = new Cocinero();
-        String query = "select * from cocinero where nombre ="+nombre+";";
+        String query = "select * from cocinero where nombre ='"+nombre+"';";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(query);
         while(rs.next()){
